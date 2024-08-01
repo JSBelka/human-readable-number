@@ -10,6 +10,6 @@ module.exports = function toReadable (number) {
       let second_number = toReadable (number % 10);
       return below_hundred[(number - (number % 10)) / 10 -2] + " " + second_number;
   } else {
-      return single_number[number / 100] + "hundred" + toReadable(number % 100);
+      return single_number[Math.trunc(number / 100)] + " hundred " + toReadable(number % 100);
   }
 }
